@@ -1,6 +1,8 @@
 project "imgui"
     kind "StaticLib"
     language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -23,14 +25,12 @@ project "imgui"
 
     filter "system:windows"
 		systemversion "latest"
-		cppdialect "C++17"
-		staticruntime "On"
+		
 
 	filter "system:linux"
 		pic "On"
 		systemversion "latest"
-		cppdialect "C++17"
-		staticruntime "On"
+
 
 	filter "configurations:Debug"
 		runtime "Debug"
